@@ -1,34 +1,52 @@
-# Smart Resale — ML Resale Price Predictor
+# Smart Resale — Real-Time Resale Price Predictor
 
-> ML-powered resale price predictor for smartphones & laptops
+> Know the fair price of your phone or laptop before you buy or sell.
 
-![Python](https://img.shields.io/badge/Python-3.x-blue) ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-ML-orange) ![License](https://img.shields.io/badge/License-MIT-green)
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Scikit-learn](https://img.shields.io/badge/ML-Scikit--learn-orange)
+![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## What it does
-Used devices are notoriously hard to price fairly. Smart Resale uses machine learning to predict the resale value of smartphones and laptops based on key specs and usage factors — giving buyers and sellers a data-backed benchmark.
+## The problem
+Resale pricing on OLX, Cashify, and Amazon Renewed is inconsistent 
+and confusing — especially for students and Gen Z buyers on a budget. 
+There's no reliable way to know the fair market value of a used device.
 
-## How it works
-| Step | Description |
+## The solution
+Smart Resale scrapes real-time listings, processes the data, and uses 
+ML to predict a fair resale price — instantly, from just the device specs.
+
+## Pipeline
+| Step | What happens |
 |------|-------------|
-| Data generation | Synthesizes realistic device datasets with specs & pricing |
-| Preprocessing | Cleans, encodes, and scales features using Pandas & NumPy |
-| Modelling | Trains Random Forest & Gradient Boosting regressors |
-| Insights | Visualises feature importance & model performance metrics |
+| Scraping | Pulls live listings from OLX, Cashify, Amazon Renewed |
+| Preprocessing | Cleans prices, extracts specs, handles missing values |
+| EDA | Finds patterns — how brand, RAM, age affect price |
+| Modelling | Trains Random Forest, XGBoost, Linear Regression |
+| Interface | Streamlit app — enter specs, get predicted price |
+
+## Current status
+- [x] Synthesized dataset & baseline ML models
+- [x] EDA & feature importance visualisation  
+- [ ] Live web scraping (OLX, Cashify)
+- [ ] Streamlit UI
+- [ ] Deployment
 
 ## Quick start
 ```bash
-# 1. Clone
 git clone https://github.com/ria0304/smart-resale
-
-# 2. Install
 pip install -r requirements.txt
-
-# 3. Run
-jupyter notebook "solution - JupyterLab.ipynb"
+jupyter notebook solution_jupyterlab.ipynb
 ```
 
 ## Tech stack
-`Python` `Pandas` `NumPy` `Scikit-learn` `Matplotlib` `Seaborn`
+`Python` `BeautifulSoup` `Selenium` `Pandas` `NumPy`  
+`Scikit-learn` `XGBoost` `Matplotlib` `Seaborn` `Streamlit`
+
+## Future scope
+- Expand to tablets, smartwatches, gaming consoles
+- Image recognition for condition detection from photos
+- Real-time demand trends for dynamic pricing
 
 ## License
 MIT — by [ria0304](https://github.com/ria0304)
